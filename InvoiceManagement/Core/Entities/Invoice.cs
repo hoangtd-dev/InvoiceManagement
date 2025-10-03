@@ -1,6 +1,8 @@
-﻿namespace InvoiceManagement.Core.Entities
+﻿using InvoiceManagement.Core.Entities.Base;
+
+namespace InvoiceManagement.Core.Entities
 {
-    public class Invoice
+    public class Invoice : BaseEntity
     {
     }
 }

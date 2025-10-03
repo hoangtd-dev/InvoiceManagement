@@ -1,6 +1,13 @@
-﻿namespace InvoiceManagement.Core.Interfaces.Repositories
+﻿using InvoiceManagement.Core.Entities;
+
+namespace InvoiceManagement.Core.Interfaces.Repositories
 {
-    public class IInvoiceRepository
+    public interface IInvoiceRepository
     {
+        Task CreateInvoice(Invoice invoice);
+        Task UpdateInvoice(Invoice invoice);
+        Task DeleteInvoice(int id);
+        Task<Invoice> GetInvoiceById(int id);
+        Task<ICollection<Invoice>> GetInvoices(); // TODO: Add filter
     }
 }

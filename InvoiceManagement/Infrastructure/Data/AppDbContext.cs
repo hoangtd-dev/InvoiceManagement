@@ -1,7 +1,9 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
+
 namespace InvoiceManagement.Infrastructure.Data
 {
-    public class AppDbContext
+    public class AppDbContext : DbContext
     {
     }
 }
