@@ -4,69 +4,52 @@
 
 Invoice Management/
 
-├── Core/ # Business Logic & Domain Layer
+### Core Layer
+**Purpose**: Contains business rules and domain logic
 
-│ ├── Entities/ # Domain Entities
+#### Entities/
+- **User.cs**
+- **Invoice.cs**
 
-│ │ ├── User.cs
+#### Interfaces/
+- **Repositories/**
+  - **IUserRepository.cs**
+  - **IInvoiceRepository.cs**
+- **Services/**
+  - **IUserService.cs**
+  - **IInvoiceService.cs**
 
-│ │ └── Invoice.cs
+#### Services/
+- **UserService.cs**
+- **InvoiceService.cs**
 
-│ ├── Interfaces/ # Contracts & Abstractions
+#### DTOs/
+- **Requests/**
+  - **CreateInvoiceRequest.cs**
+  - **UpdateInvoiceRequest.cs**
+- **Responses/**
+  - **InvoiceResponse.cs**
+  - **Result.cs**
 
-│ │ ├── Repositories/ # Data Access Contracts
+#### Exceptions/
 
-│ │ │ ├── IInvoiceRepository.cs
+### Infrastructure Layer
+**Purpose**: Handles external concerns and data access
 
-│ │ │ └── IUserRepository.cs
+#### Data/
+- **AppDbContext.cs**: Entity Framework database context
+- **Configurations/**: Entity configuration classes
 
-│ │ └── Services/ # Business Service Contracts
+#### Repositories/
+- **UserRepository.cs**
+- **InvoiceRepository.cs**
 
-│ │ ├── IInvoiceService.cs
+### Presentation Layer
+**Purpose**: Contains presentation logic and view models
 
-│ │ └── IUserService.cs
+#### ViewModels/
 
-│ ├── Services/ # Business Logic Implementation
+#### Forms/
+- **MainForm.cs**
 
-│ │ ├── InvoiceService.cs
-
-│ │ └── UserService.cs
-
-│ ├── DTOs/ # Data Transfer Objects
-
-│ │ ├── Requests/ # Input Models
-
-│ │ │ ├── CreateInvoiceRequest.cs
-
-│ │ │ └── UpdateInvoiceRequest.cs
-
-│ │ └── Responses/ # Output Models
-
-│ │ ├── InvoiceResponse.cs
-
-│ │ └── UserResult.cs
-
-│ └── Exceptions/ # Custom Exceptions
-
-├── Infrastructure/ # External Concerns & Data Access
-
-│ ├── Data/ # Data Access Layer
-
-│ │ ├── AppDbContext.cs
-
-│ │ └── Configurations/
-
-│ ├── Repositories/ # Repository Implementations
-
-│ │ ├── UserRepository.cs
-
-│ │ └── InvoiceRepository.cs
-
-├── Presentation/ # Presentation Logic
-
-
-│ └── Forms/ # Form Definitions (Code-behind)
-
-│ ├── MainForm.cs
-
-├── Program.cs # Application Entry Point
+**Program.cs**: Application entry point and DI configuration
