@@ -3,6 +3,7 @@
 ## 📁 Project Structure
 
 Invoice Management/
+
 ├── Core/ # Business Logic & Domain Layer
 
 │ ├── Entities/ # Domain Entities
