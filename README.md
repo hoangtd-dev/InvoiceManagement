@@ -53,3 +53,18 @@ Invoice Management/
 - **MainForm.cs**
 
 **Program.cs**: Application entry point and DI configuration
+
+--------------------------
+### Layer Dependencies
+- **Core**: No dependencies on other projects
+- **Infrastructure**: Depends on Core (for interfaces)
+- **Presentation**: Depends on Core (for services and DTOs)
+- **UI**: Depends on all layers (composition root)
+
+### Request Flow Example
+1. **User Action** → UI Layer (Button click)
+2. **UI Layer** → Presentation Layer (ViewModel method call)
+3. **Presentation Layer** → Core Layer (Service method call)
+4. **Core Layer** → Infrastructure Layer (Repository method call)
+5. **Infrastructure Layer** → Database (Entity Framework)
+6. **Response flows back up the chain**
