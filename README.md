@@ -59,7 +59,6 @@ Invoice Management/
 - **Core**: No dependencies on other projects
 - **Infrastructure**: Depends on Core (for interfaces)
 - **Presentation**: Depends on Core (for services and DTOs)
-- **UI**: Depends on all layers (composition root)
 
 ### Request Flow Example
 1. **User Action** → UI Layer (Button click)
